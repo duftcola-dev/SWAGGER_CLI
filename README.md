@@ -40,15 +40,6 @@
     This is a cli that allows to make an easy use of the Swagger api on a local machine.
     The cli allows to clone and build the nescessary deppendencies as well as launch the
     swagger editor and the code generator console.
-    <br />
-    <a href="https://github.com/duftcola-dev/SWAGGER_CLI"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/duftcola-dev/SWAGGER_CLI">View Demo</a>
-    ·
-    <a href="https://github.com/duftcola-dev/SWAGGER_CLI/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/duftcola-dev/SWAGGER_CLI/issues">Request Feature</a>
   </p>
 </div>
 
@@ -87,7 +78,7 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`
+Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `duftcola-dev`, `SWAGGER_CLI`, `linkedin_username`, `email_client`, `email`, `Swagger cli`, `Swagger cli`
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
