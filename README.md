@@ -96,14 +96,9 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 ### Built With
 
 * [![Python][Python.py]][Python-url]
-* [![Next][Next.js]][Next-url]
-* [![React][React.js]][React-url]
-* [![Vue][Vue.js]][Vue-url]
-* [![Angular][Angular.io]][Angular-url]
-* [![Svelte][Svelte.dev]][Svelte-url]
-* [![Laravel][Laravel.com]][Laravel-url]
-* [![Bootstrap][Bootstrap.com]][Bootstrap-url]
-* [![JQuery][JQuery.com]][JQuery-url]
+* [![Click][Click]][Click-url]
+* [![Swagger][Swagger]][Swagger-url]
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -232,7 +227,11 @@ Project Link: [https://github.com/github_username/repo_name](https://github.com/
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/linkedin_username
 [product-screenshot]: images/screenshot.png
-[Python.py]:https://img.shields.io/badge/python-3.10-blue
+[Swagger]:https://img.shields.io/badge/Swagger-18a10a?style=for-the-badge&logo=swagger&logoColor=blue
+[Swagger-url]:https://swagger.io/
+[Click]:https://img.shields.io/badge/click-fafcfa?style=for-the-badge&logo=click&logoColor=black
+[Click-url]:https://click.palletsprojects.com/en/8.1.x/
+[Python.py]:https://img.shields.io/badge/python-000000?style=for-the-badge&logo=python&logoColor=blue
 [Python-url]:https://www.python.org/
 [Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
 [Next-url]: https://nextjs.org/
