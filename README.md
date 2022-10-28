@@ -37,18 +37,18 @@
 <h3 align="center">Swagger cli</h3>
 
   <p align="center">
-    This is a cli that allows to make a easy use of the Swagger api and open api on a local machine.
+    This is a cli that allows to make an easy use of the Swagger api on a local machine.
     The cli allows to clone and build the nescessary deppendencies as well as launch the
-    swagger editor and the conde generator console.
+    swagger editor and the code generator console.
     <br />
-    <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/duftcola-dev/SWAGGER_CLI"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/github_username/repo_name">View Demo</a>
+    <a href="https://github.com/duftcola-dev/SWAGGER_CLI">View Demo</a>
     ·
-    <a href="https://github.com/github_username/repo_name/issues">Report Bug</a>
+    <a href="https://github.com/duftcola-dev/SWAGGER_CLI/issues">Report Bug</a>
     ·
-    <a href="https://github.com/github_username/repo_name/issues">Request Feature</a>
+    <a href="https://github.com/duftcola-dev/SWAGGER_CLI/issues">Request Feature</a>
   </p>
 </div>
 
