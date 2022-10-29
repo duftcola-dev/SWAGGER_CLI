@@ -1,6 +1,8 @@
 import click 
 import os 
+import re
 import pathlib
+import subprocess
 from tkinter import Tk,filedialog
 
 ROOT_DIR=str(pathlib.Path(__file__).resolve().parent.parent.parent)
@@ -25,6 +27,19 @@ def __Build():
     temp=ROOT_DIR+SLASH+"swagger-codegen"+SLASH
     print(temp)
     os.system(f"cd {temp} && .{SLASH}run-in-docker.sh mvn package")
+
+def __InstallTkinter():
+    result=subprocess.Popen(
+        ["python","--version"],
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE
+    )
+    stdout,stderr=result.communicate()
+    stdout=stdout.decode()
+    pattern=re.compile(r"\d.\d\d")
+    result=pattern.search(stdout)
+    version=result.group()
+    os.system(f"sudo apt-get install python{version}-tk")
 
 def SearchFile()->str:
     root=Tk()
@@ -103,6 +118,9 @@ def build():
     """Builds the deppendenecies for the code generator."""
     click.secho("Building deppendencies",fg="white",bg="green")
     __Build()
+    click.secho("Installing tkinter version for :\n",fg="white",bg="green")
+    os.system("python --version")
+    __InstallTkinter()
 
 @click.command()
 @click.option("--input",default="",type=str,help="path to .json or .yml file")
@@ -115,7 +133,6 @@ def generate(input:str,output:str):
         click.secho("Warning",fg="white",bg="yellow")
         click.secho("A .json/.yaml file is require as input parameter.",fg="yellow")
         click.secho("Example : python cli  generate --input file_path/path/template.json",fg="yellow")
-
     if output.strip() == "" or output is None:
         os.system("clear")
         click.secho("Warning",fg="white",bg="yellow")

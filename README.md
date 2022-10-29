@@ -39,7 +39,12 @@
   <p align="center">
     This is a cli that allows to make an easy use of the Swagger api on a local machine.
     The cli allows to clone and build the nescessary deppendencies as well as launch the
-    swagger editor and the code generator console.
+    swagger editor and the code generator console. So far the project have only been developed and tested 
+    in Ubuntu 20.4 so there is no assurance that it will work on Windows. 
+
+    To make it clear you will need both the editor and code generator.
+    The editor for generating rest api studs and server side documentation and the
+    code generator to convert this documentation in usefull code.
   </p>
 </div>
 
@@ -80,7 +85,7 @@
 
 ![](https://github.com/duftcola-dev/SWAGGER_CLI/blob/master/media/open_cli.gif)
 
-<p>Run python cli launch to execute the swagger editor on your localhost</p>
+<p>Execute : python cli launch to execute the swagger editor on your localhost</p>
 
 ![](https://github.com/duftcola-dev/SWAGGER_CLI/blob/master/media/launching.gif)
 
@@ -93,44 +98,44 @@
 * [![Python][Python.py]][Python-url]
 * [![Click][Click]][Click-url]
 * [![Swagger][Swagger]][Swagger-url]
-
+* [![Docker][Docker]][Docker-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+Download the <a href="">release</a> version. This is a cleaner repository without
+some media files you may not want.
 
+Run all the commands from outside of the folder cli/.
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
+* pip
   ```sh
-  npm install npm@latest -g
+  pip install -r requirements.txt --upgrade pip
   ```
-
 ### Installation
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+1. Clone the swagger codegen repository by running:
    ```sh
-   git clone https://github.com/github_username/repo_name.git
+   python cli clone
    ```
-3. Install NPM packages
+2. Pull the swagger editor
    ```sh
-   npm install
+   python cli pull
    ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
+3. Build deppendecies (java vm). Also installs tkinter version == your python version.
+   ```sh
+   python cli build
+   ```
+4. Launch your editor.
+   ```sh
+   python cli launch
    ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 
 <!-- USAGE EXAMPLES -->
@@ -222,6 +227,8 @@ Project Link: [https://github.com/github_username/repo_name](https://github.com/
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/linkedin_username
 [product-screenshot]: images/screenshot.png
+[Docker]:https://img.shields.io/badge/Docker-037ffc?style=for-the-badge&logo=docker&logoColor=white
+[Docker-url]:https://www.docker.com/
 [Swagger]:https://img.shields.io/badge/Swagger-18a10a?style=for-the-badge&logo=swagger&logoColor=blue
 [Swagger-url]:https://swagger.io/
 [Click]:https://img.shields.io/badge/click-fafcfa?style=for-the-badge&logo=click&logoColor=black
