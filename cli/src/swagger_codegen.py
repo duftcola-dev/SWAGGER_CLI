@@ -145,10 +145,6 @@ def generate(input:str,output:str):
     os.system(f"cd {temp} && .{SLASH}run-in-docker.sh generate -i {input} -l go -o /gen/{output}")
     
 
-@click.command()
-def interactive():
-    """Interactive option"""
-    click.secho("Interactive console",fg="white",bg="green")
 
 
 

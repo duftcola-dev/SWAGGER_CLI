@@ -72,7 +72,7 @@ def remove():
 @click.command()
 @click.option("--interactive",is_flag=True,help="Allows to select the file from a browser")
 @click.option("--path",default="",help="template .json/yml path")
-def template(interactive,path):
+def launch_template(interactive,path):
     """Launch the editor on localhost:8000 using a template """
     if path !="":
         click.secho(f"Launching using template : {path}",fg="white",bg="green")

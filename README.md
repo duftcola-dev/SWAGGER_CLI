@@ -144,14 +144,23 @@ some media files you may not want.
 * python cli <option> --help 
   - Will display the options/flags avaible for a command.
   - Also instructions for its usage.
-* python cli launch
+
+* python cli build : Builds the required deppendencies
+* python cli clone : Clones the swagger code generator repository
+
+* python cli launch:
+  - Launches the editor in your local machine on your localhost:8000/ by default.
   - options:
-    - --build
-    - --url
-    - --port
-  - Launches the editor on you local machine on your localhost:8000/ by default.
-  - If the swagger editor container is not built yet you can use the flag --build to create it:
-  example : python cli launch --build
+    - --build : Forces to build a new container for the editor.
+    - --url : Specifies a url to launch the editor. (default localhost)
+    - --port : Specifies a port to launch the editor. (default 8000)
+* python cli remove: Removes the editor container if exists.
+* python cli template: 
+  - Launches the editor on localhost:8000 using the specified .json/.yml template.
+  - options:
+    - --interactive: Opens a file browser to select the template file.
+    - --path : Absolute path to the template file. (manual option)
+  
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
