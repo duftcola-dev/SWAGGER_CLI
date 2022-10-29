@@ -108,8 +108,6 @@
 
 Download the <a href="">release</a> version. This is a cleaner repository without
 some media files you may not want.
-
-Run all the commands from outside of the folder cli/.
 ### Prerequisites
 
 * pip
@@ -141,9 +139,16 @@ Run all the commands from outside of the folder cli/.
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+* python cli 
+  - This is the most basic command. It will display all the availabe options 
+* python cli <option> --help 
+  - Will display the options/flags avaible for a command.
+  - Also instructions for its usage.
+* python cli launch
+  - Launches the editor on you local machine on your localhost:8000/ by default.
+  - If the swagger editor container is not built yet you use the --build flag to create it:
+  example : python cli launch --build
 
-_For more examples, please refer to the [Documentation](https://example.com)_
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
