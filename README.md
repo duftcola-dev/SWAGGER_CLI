@@ -75,10 +75,14 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
+<p>This project is a cli to facilitate the use of swagger editor and swagger conde generator locally.
+Execute python cli to display the user manual and options</p>
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[](https://github.com/duftcola-dev/SWAGGER_CLI/tree/master/media/open_cli.gif)
 
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `duftcola-dev`, `SWAGGER_CLI`, `linkedin_username`, `email_client`, `email`, `Swagger cli`, `Swagger cli`
+<p>Run python cli launch to execute the swagger editor on your localhost</p>
+
+[](https://github.com/duftcola-dev/SWAGGER_CLI/tree/master/media/launching.gif)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

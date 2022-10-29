@@ -35,11 +35,13 @@ def launch(build,url,port):
     if build:
         os.system(f"docker run -d -p 8000:8080 --name editor swaggerapi/swagger-editor")
         click.secho(f"Swagger editor running on locahost:8000/",fg="green")
+        os.system("google-chrome http://localhost:8000/")
     else:
         if url != "localhost" or port != 8000:
             result=os.system(f"docker run -d -p {port}:8080 -e URL='{url}' --name editor swaggerapi/swagger-editor")
             if result==0:
                 click.secho(f"Swagger editor running on {url}:{port}/",fg="green")
+                os.system(f"google-chrome http://{url}:{port}/")
         else:
             result=os.system("docker start editor")
             if result==0:
@@ -53,6 +55,7 @@ def launch(build,url,port):
                     click.secho("Creating container editor on locahost:8000",bg="green")
                     os.system("docker run -d -p 8000:8080 --name editor swaggerapi/swagger-editor")
                     click.secho("Swagger editor running on localhost:8000/",fg="green")
+                    os.system("google-chrome http://localhost:8000/")
                 else:
                     os.system("clear")
                     click.secho("Aborting",bg="yellow")
@@ -74,6 +77,7 @@ def template(interactive,path):
     if path !="":
         click.secho(f"Launching using template : {path}",fg="white",bg="green")
         os.system(f"docker run -d -p 8000:8080 -v $(pwd):/tmp -e SWAGGER_FILE={path} swaggerapi/swagger-editor")
+        os.system("google-chrome http://localhost:8000/")
         return
     if interactive:
         root=Tk()
@@ -89,6 +93,7 @@ def template(interactive,path):
             return
         click.secho(f"Launching using template : {file_path} on localhost:8000 with container name : editor",fg="white",bg="green")
         os.system(f"docker run -d -p 8000:8080 -v $(pwd):/tmp -e SWAGGER_FILE={file_path} --name editor swaggerapi/swagger-editor")
+        os.system("google-chrome http://localhost:8000/")
         return
     click.secho("You must at least provide an option : --path | --interactive",fg="yellow")
 
