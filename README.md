@@ -139,24 +139,37 @@ some media files you may not want.
 <!-- USAGE EXAMPLES -->
 ## Usage
 ```sh
-* python cli 
+  python cli 
 ```
   - This is the most basic command. It will display all the availabe options 
-* python cli <option> --help 
+```sh
+  python cli <option> --help 
+```
   - Will display the options/flags avaible for a command.
   - Also instructions for its usage.
-
-* python cli build : Builds the required deppendencies
-* python cli clone : Clones the swagger code generator repository
-
-* python cli launch:
+```sh
+  python cli build 
+```
+  - Builds the required deppendencies
+```sh
+  python cli clone 
+```
+  - Clones the swagger code generator repository
+```sh
+  python cli launch
+```
   - Launches the editor in your local machine on your localhost:8000/ by default.
   - options:
     - --build : Forces to build a new container for the editor.
     - --url : Specifies a url to launch the editor. (default localhost)
     - --port : Specifies a port to launch the editor. (default 8000)
-* python cli remove: Removes the editor container if exists.
-* python cli template: 
+```sh
+  python cli remove
+```
+  - Removes the editor container if exists.
+```sh
+  python cli template
+```
   - Launches the editor on localhost:8000 using the specified .json/.yml template.
   - options:
     - --interactive : Opens a file browser to select the template file.
