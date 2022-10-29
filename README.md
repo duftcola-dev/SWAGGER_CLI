@@ -22,7 +22,7 @@
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
-[![License][license-shield]][license-url]
+[![Apache-2 License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
 
@@ -252,7 +252,7 @@ Robin Viera - robinviera@hotmail.com
 [stars-url]: https://github.com/duftcola-dev/SWAGGER_CLI/stargazers
 [issues-shield]: https://img.shields.io/github/issues/duftcola-dev/SWAGGER_CLI.svg?style=for-the-badge
 [issues-url]: https://github.com/duftcola-dev/SWAGGER_CLI/issues
-[license-shield]: https://img.shields.io/badge/License-Apache_2.0-blue.svg
+[license-shield]: https://img.shields.io/github/license/duftcola-dev/SWAGGER_CLI.svg?style=for-the-badge
 [license-url]: https://github.com/duftcola-dev/SWAGGER_CLI/blob/master/LICENSE.txt
 [ApacheLicense-url]:https://www.apache.org/licenses/LICENSE-2.0
 [MitLicense-url]:https://choosealicense.com/licenses/mit/
