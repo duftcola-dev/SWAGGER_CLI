@@ -184,12 +184,14 @@ some media files you may not want.
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Feature 1
-- [ ] Feature 2
-- [ ] Feature 3
-    - [ ] Nested Feature
+- [ ] Develop cli skeleton
+- [ ] Develop Swagger editor cli
+- [ ] Create unittest for Swagger editor cli
+- [ ] Develop codegen cli
+- [ ] Create unittest codegen cli (Therefore code gen is not fully tested yet)
 
-See the [open issues](https://github.com/github_username/repo_name/issues) for a full list of proposed features (and known issues).
+
+See the [open issues](https://github.com/duftcola-dev/SWAGGER_CLI/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

@@ -108,8 +108,7 @@ def Interactive():
 
 @click.command()
 def clone():
-    """Clones and downloads the nescessary deppendencies for
-    the code generator."""
+    """Clones the deppendencies for the code generator."""
     click.secho("Cloning SWAGGER deppendencies",fg="white",bg="green")
     __Clone()
 
@@ -126,7 +125,7 @@ def build():
 @click.option("--input",default="",type=str,help="path to .json or .yml file")
 @click.option("--output",default="",type=str,help="ouput path for the generated file")
 def generate(input:str,output:str):
-    """Generates the documentation using both .json files and .yml files."""
+    """Generates the documentation using both .json/.yml files"""
     click.secho("Generating",fg="white",bg="green")
     if input.strip() == "" or input is None:
         os.system("clear")
