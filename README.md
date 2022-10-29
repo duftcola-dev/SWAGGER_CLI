@@ -227,7 +227,7 @@ Distributed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apac
 <!-- CONTACT -->
 ## Contact
 
-Robin Viera - robinviera@hotmail.com.com
+Robin Viera - robinviera@hotmail.com
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
