@@ -252,7 +252,7 @@ Robin Viera - robinviera@hotmail.com
 [stars-url]: https://github.com/duftcola-dev/SWAGGER_CLI/stargazers
 [issues-shield]: https://img.shields.io/github/issues/duftcola-dev/SWAGGER_CLI.svg?style=for-the-badge
 [issues-url]: https://github.com/duftcola-dev/SWAGGER_CLI/issues
-[license-shield]: https://img.shields.io/github/license/duftcola-dev/SWAGGER_CLI.svg?style=for-the-badge
+[license-shield]: https://img.shields.io/badge/License-Apache_2.0-blue.svg
 [license-url]: https://github.com/duftcola-dev/SWAGGER_CLI/blob/master/LICENSE.txt
 [ApacheLicense-url]:https://www.apache.org/licenses/LICENSE-2.0
 [MitLicense-url]:https://choosealicense.com/licenses/mit/
