@@ -78,7 +78,7 @@
 
 <p>Execute : python cli to display the user manual and options</p>
 
-![](https://github.com/duftcola-dev/SWAGGER_CLI/tree/master/media/open_cli.gif)
+![](https://github.com/duftcola-dev/SWAGGER_CLI/blob/master/media/open_cli.gif)
 
 <p>Run python cli launch to execute the swagger editor on your localhost</p>
 
