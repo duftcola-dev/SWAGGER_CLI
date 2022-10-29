@@ -145,8 +145,12 @@ some media files you may not want.
   - Will display the options/flags avaible for a command.
   - Also instructions for its usage.
 * python cli launch
+  - options:
+    - --build
+    - --url
+    - --port
   - Launches the editor on you local machine on your localhost:8000/ by default.
-  - If the swagger editor container is not built yet you use the --build flag to create it:
+  - If the swagger editor container is not built yet you can use the flag --build to create it:
   example : python cli launch --build
 
 
