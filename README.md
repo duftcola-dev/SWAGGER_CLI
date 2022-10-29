@@ -138,8 +138,9 @@ some media files you may not want.
 
 <!-- USAGE EXAMPLES -->
 ## Usage
-
+```sh
 * python cli 
+```
   - This is the most basic command. It will display all the availabe options 
 * python cli <option> --help 
   - Will display the options/flags avaible for a command.
@@ -158,7 +159,7 @@ some media files you may not want.
 * python cli template: 
   - Launches the editor on localhost:8000 using the specified .json/.yml template.
   - options:
-    - --interactive: Opens a file browser to select the template file.
+    - --interactive : Opens a file browser to select the template file.
     - --path : Absolute path to the template file. (manual option)
   
 
