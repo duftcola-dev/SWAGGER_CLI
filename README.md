@@ -184,8 +184,8 @@ some media files you may not want.
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Develop cli skeleton
-- [ ] Develop Swagger editor cli
+- [*] Develop cli skeleton
+- [*] Develop Swagger editor cli
 - [ ] Create unittest for Swagger editor cli
 - [ ] Develop codegen cli
 - [ ] Create unittest codegen cli (Therefore code gen is not fully tested yet)
@@ -218,7 +218,7 @@ Don't forget to give the project a star! Thanks again!
 <!-- LICENSE -->
 ## License
 
-Distributed under the MIT License. See `LICENSE.txt` for more information.
+Distributed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 License.</a>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -227,9 +227,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
-
-Project Link: [https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)
+Robin Viera - robinviera@hotmail.com.com
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -238,9 +236,7 @@ Project Link: [https://github.com/github_username/repo_name](https://github.com/
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-* []()
-* []()
-* []()
+* This is an unfinished project an some features may not work yet.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
