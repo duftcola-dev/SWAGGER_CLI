@@ -131,6 +131,8 @@ some media files you may not want.
    ```sh
    python cli launch
    ```
+- Make sure to use OAS 2.0 or swagger 2.0  since the code-gen does not work with OAS 3.0
+- Always try to use yaml since using json might lead to issues.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -149,7 +151,7 @@ some media files you may not want.
 ```sh
   python cli build 
 ```
-  - Builds the required deppendencies
+  - Builds the required deppendencies and creates needed folders
 ```sh
   python cli clone 
 ```
@@ -173,8 +175,21 @@ some media files you may not want.
   - options:
     - --interactive : Opens a file browser to select the template file.
     - --path : Absolute path to the template file. (manual option)
-  
-
+```sh
+  python cli generate
+``` 
+  - Generates the code based on the documentation created in the editor.
+  - --lang: Language in which the code will be generated.
+  - --input: Documentation file created by the editor. Example swagger.yaml
+  - --ouput: Name of the folder wher the resulting code will be saved.
+```sh
+  python cli langs
+``` 
+  - Display the list of available languages
+```sh
+  python cli lang-list
+``` 
+  - Display the list of available languages
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -184,10 +199,9 @@ some media files you may not want.
 ## Roadmap
 
 - [x] Develop cli skeleton
-- [x] Develop Swagger editor cli
-- [ ] Create unittest for Swagger editor cli
-- [ ] Develop codegen cli
-- [ ] Create unittest codegen cli (Therefore code gen is not fully tested yet)
+- [x] Develop Swagger editor clis
+- [x] Develop codegen cli
+- [x] Create unittest codegen cli
 
 
 See the [open issues](https://github.com/duftcola-dev/SWAGGER_CLI/issues) for a full list of proposed features (and known issues).
@@ -216,7 +230,7 @@ Robin Viera - robinviera@hotmail.com
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-* This is an unfinished project an some features may not work yet.
+* This is an unfinished project but so far all the main features work without issues.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

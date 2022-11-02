@@ -28,7 +28,7 @@ def __Build():
     temp=ROOT_DIR+SLASH+"swagger-codegen"+SLASH
     _in=temp=ROOT_DIR+SLASH+"swagger-codegen"+SLASH+"in"
     _out=temp=ROOT_DIR+SLASH+"swagger-codegen"+SLASH+"out"
-    
+
     print(temp)
     os.system(f"cd {temp} && .{SLASH}run-in-docker.sh mvn package")
     os.system(f"mkdir {_in}")
@@ -158,7 +158,17 @@ def generate(lang:str,input:str,output:str):
         click.secho("Check the list of available languages by running: \n",fg="yellow")
         click.secho("python cli langs",fg="blue")
         click.secho("or")
-        click.secho("python cli lang_list",fg="blue")
+        click.secho("python cli lang-list\n",fg="blue")
+        return
+    if lang.strip() not in LANGS:
+        os.system("clear")
+        click.secho("Error",fg="white",bg="red")
+        click.secho(f"The chosen language {lang} cannot be found in the list of available languages",fg="red")
+        click.secho("Check the list of available languages by running: \n",fg="yellow")
+        click.secho("python cli langs",fg="blue")
+        click.secho("or")
+        click.secho("python cli lang-list\n",fg="blue")
+        return
 
     temp=ROOT_DIR+SLASH+"swagger-codegen"+SLASH
     input_path=ROOT_DIR+SLASH+"in"+SLASH+input # moving from /in
