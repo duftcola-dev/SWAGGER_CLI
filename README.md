@@ -111,6 +111,8 @@ some media files you may not want.
 
 * pip
   ```sh
+  python -m venv venv 
+  source venv/bin/activate
   pip install -r requirements.txt --upgrade pip
   ```
 ### Installation
@@ -123,7 +125,7 @@ some media files you may not want.
    ```sh
    python cli pull
    ```
-3. Build deppendecies (java vm). Also installs tkinter version == your python version.
+3. Build deppendecies (java vm). Also installs tkinter version == your python version + creates some reuired folders.
    ```sh
    python cli build
    ```
@@ -151,7 +153,7 @@ some media files you may not want.
 ```sh
   python cli build 
 ```
-  - Builds the required deppendencies and creates needed folders
+  - Builds the required deppendencies.
 ```sh
   python cli clone 
 ```
@@ -190,6 +192,14 @@ some media files you may not want.
   python cli lang-list
 ``` 
   - Display the list of available languages
+
+## User manual
+
+1. Open the editor by running python cli launch (there is a petstore tamplate by default)
+2. Load/create your documentation using OAS 2.0 (swagger 2.0)
+3. Save the resulting .yaml documentation at SWAGGER_CLI/in (this is important)
+4. Sun python cli generate --lang <some_language> --input <file.yaml> --output <some_folder_name>
+5. Checkout the resulting code at  SWAGGER_CLI/out
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
