@@ -122,10 +122,11 @@ def build():
     __InstallTkinter()
 
 @click.command()
-@click.option("--input",default="",type=str,help="path to .json or .yml file")
-@click.option("--output",default="",type=str,help="ouput path for the generated file")
+@click.option("--input",default="",type=str,help="name of the input file example : swagger.yaml")
+@click.option("--output",default="",type=str,help="folder name of the output example : out-server")
 def generate(input:str,output:str):
-    """Generates the documentation using both .json/.yml files"""
+    """Generates code using .yml files. Input .yaml files must be stored at /in.
+    Generated code will be placed at /out"""
     click.secho("Generating",fg="white",bg="green")
     if input.strip() == "" or input is None:
         os.system("clear")
@@ -138,10 +139,24 @@ def generate(input:str,output:str):
         click.secho("An output path for the generated code is reuqired",fg="yellow")
         click.secho("'.' is a valid path",fg="yellow")
         click.secho("Example : python cli  generate --input file_path/path/template.json --output .",fg="yellow")
+
     temp=ROOT_DIR+SLASH+"swagger-codegen"+SLASH
+    input_path=ROOT_DIR+SLASH+"in"+SLASH+input # moving from /in
+    _input_path=temp+"in"+SLASH+input # to /swagger-codegen/in
+    _output_path=temp+"out"+SLASH+output
+    ouput_path=ROOT_DIR+SLASH+"out"
+
     click.secho(f"-->{input}",fg="green")
     click.secho(f"-->{output}",fg="blue")
-    os.system(f"cd {temp} && .{SLASH}run-in-docker.sh generate -i {input} -l go -o /gen/{output}")
+    if os.path.isfile(input_path) == False:
+        click.secho(f"{input_path} not found",fg="red")
+        click.secho("Aborting",fg="white",bg="yellow")
+        return
+    os.system(f"mv {input_path} {_input_path} ")# moving from /in to /swagger-codegen/in
+    
+    os.system(f"cd {temp} && .{SLASH}run-in-docker.sh generate -i in/{input} -l go -o  ./out/{output}")
+    os.system(f"mv {_input_path} {input_path} ")# /swagger-codegen/in to moving from /in
+    os.system(f"mv {_output_path} {ouput_path}")# /swagger-codegen/out to moving from /out
     
 
 

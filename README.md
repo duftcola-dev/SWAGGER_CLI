@@ -183,8 +183,8 @@ some media files you may not want.
 <!-- ROADMAP -->
 ## Roadmap
 
-- [*] Develop cli skeleton
-- [*] Develop Swagger editor cli
+- [x] Develop cli skeleton
+- [x] Develop Swagger editor cli
 - [ ] Create unittest for Swagger editor cli
 - [ ] Develop codegen cli
 - [ ] Create unittest codegen cli (Therefore code gen is not fully tested yet)
