@@ -4,6 +4,7 @@ import re
 import pathlib
 import subprocess
 from tkinter import Tk,filedialog
+from .langs import LANGS
 
 ROOT_DIR=str(pathlib.Path(__file__).resolve().parent.parent.parent)
 SLASH="/"
@@ -25,8 +26,13 @@ def __Clone():
 
 def __Build():
     temp=ROOT_DIR+SLASH+"swagger-codegen"+SLASH
+    _in=temp=ROOT_DIR+SLASH+"swagger-codegen"+SLASH+"in"
+    _out=temp=ROOT_DIR+SLASH+"swagger-codegen"+SLASH+"out"
+    
     print(temp)
     os.system(f"cd {temp} && .{SLASH}run-in-docker.sh mvn package")
+    os.system(f"mkdir {_in}")
+    os.system(f"mkdir {_out}")
 
 def __InstallTkinter():
     result=subprocess.Popen(
@@ -69,41 +75,42 @@ def Generate():
     temp=ROOT_DIR+SLASH+"swagger-codegen"+SLASH
     os.system(f"cd {temp} && .{SLASH}run-in-docker.sh generate -i {input} -l go -o {output}")
 
-def Interactive():
-    exit=False
-    choice=None
-    while(exit==False):
-        options=[Install,Build,Generate]
-        print(ROOT_DIR)
-        print("OPTIONS\n")
-        print("0) CLONE\n")
-        print("1) BUILD\n")
-        print("2) GENERATE\n")
-        print("3) HELP\n")
-        print("3 , help, h ---> for display manual")
-        print("quit, q, exit, crtl + C ---> to finish the cli\n")
+# REMOVE ??
+# def Interactive():
+#     exit=False
+#     choice=None
+#     while(exit==False):
+#         options=[Install,Build,Generate]
+#         print(ROOT_DIR)
+#         print("OPTIONS\n")
+#         print("0) CLONE\n")
+#         print("1) BUILD\n")
+#         print("2) GENERATE\n")
+#         print("3) HELP\n")
+#         print("3 , help, h ---> for display manual")
+#         print("quit, q, exit, crtl + C ---> to finish the cli\n")
 
-        try:
-            choice=(input("CHOICE (numbers only) : "))
-        except KeyboardInterrupt as err:
-            exit=True
-            print("\n")
-            break # ^C key
+#         try:
+#             choice=(input("CHOICE (numbers only) : "))
+#         except KeyboardInterrupt as err:
+#             exit=True
+#             print("\n")
+#             break # ^C key
 
 
-        if choice=="quit" or choice=="q" or choice=="exit":
-            exit=True
-            break
-        if choice=="help" or choice=="h" or choice=="3":
-            Help()
-            exit=True
-            break
-        choice=int(choice)
-        if choice < 0 or choice > len(options):
-            print("Invalid choice number")
-            return
-        options[choice]()
-    return
+#         if choice=="quit" or choice=="q" or choice=="exit":
+#             exit=True
+#             break
+#         if choice=="help" or choice=="h" or choice=="3":
+#             Help()
+#             exit=True
+#             break
+#         choice=int(choice)
+#         if choice < 0 or choice > len(options):
+#             print("Invalid choice number")
+#             return
+#         options[choice]()
+#     return
 
 
 @click.command()
@@ -122,23 +129,36 @@ def build():
     __InstallTkinter()
 
 @click.command()
+@click.option("--lang",default="",type=str,help="generated code language")
 @click.option("--input",default="",type=str,help="name of the input file example : swagger.yaml")
 @click.option("--output",default="",type=str,help="folder name of the output example : out-server")
-def generate(input:str,output:str):
+def generate(lang:str,input:str,output:str):
     """Generates code using .yml files. Input .yaml files must be stored at /in.
-    Generated code will be placed at /out"""
+    Generated code will be placed at /out. The language of the generated code must be 
+    a language within the available language list. """
     click.secho("Generating",fg="white",bg="green")
     if input.strip() == "" or input is None:
         os.system("clear")
         click.secho("Warning",fg="white",bg="yellow")
         click.secho("A .json/.yaml file is require as input parameter.",fg="yellow")
-        click.secho("Example : python cli  generate --input file_path/path/template.json",fg="yellow")
+        click.secho("Example : python cli  generate --lang go --input file_path/path/template.json",fg="yellow")
+        return
     if output.strip() == "" or output is None:
         os.system("clear")
         click.secho("Warning",fg="white",bg="yellow")
         click.secho("An output path for the generated code is reuqired",fg="yellow")
         click.secho("'.' is a valid path",fg="yellow")
-        click.secho("Example : python cli  generate --input file_path/path/template.json --output .",fg="yellow")
+        click.secho("Example : python cli  generate --lang go --input file_path/path/template.json --output .",fg="yellow")
+        return
+    if lang.strip()=="" or lang is None:
+        os.system("clear")
+        click.secho("Warning",fg="white",bg="yellow")
+        click.secho("A language --lang is required",fg="yellow")
+        click.secho("Example : python cli  generate --lang go --input file_path/path/template.json --output .",fg="yellow")
+        click.secho("Check the list of available languages by running: \n",fg="yellow")
+        click.secho("python cli langs",fg="blue")
+        click.secho("or")
+        click.secho("python cli lang_list",fg="blue")
 
     temp=ROOT_DIR+SLASH+"swagger-codegen"+SLASH
     input_path=ROOT_DIR+SLASH+"in"+SLASH+input # moving from /in
@@ -154,12 +174,26 @@ def generate(input:str,output:str):
         return
     os.system(f"mv {input_path} {_input_path} ")# moving from /in to /swagger-codegen/in
     
-    os.system(f"cd {temp} && .{SLASH}run-in-docker.sh generate -i in/{input} -l go -o  ./out/{output}")
+    os.system(f"cd {temp} && .{SLASH}run-in-docker.sh generate -i in/{input} -l {lang} -o  ./out/{output}")
     os.system(f"mv {_input_path} {input_path} ")# /swagger-codegen/in to moving from /in
     os.system(f"mv {_output_path} {ouput_path}")# /swagger-codegen/out to moving from /out
     
+@click.command()
+def info():
+    """Displays information of the code-gen api. Requires
+    priviously to clone the code-gen and build it."""
+    temp=ROOT_DIR+SLASH+"swagger-codegen"+SLASH
+    os.system(f"cd {temp} && .{SLASH}run-in-docker.sh help")
 
+@click.command()
+def langs():
+    """Display the available languages supported by the swagger-code-gen api"""
+    temp=ROOT_DIR+SLASH+"swagger-codegen"+SLASH
+    os.system(f"cd {temp} && .{SLASH}run-in-docker.sh langs")
 
-
-
+@click.command()
+def lang_list():
+    """Display the available languages supported by the swagger-code-gen api"""
+    for lang in LANGS:
+        click.secho(f"- {lang}",fg="green")
 
