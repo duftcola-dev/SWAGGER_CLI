@@ -10,6 +10,9 @@ from . swagger_codegen import (
     clone,
     build,
     generate,
+    info,
+    langs,
+    lang_list
    
 )
 @click.group()
@@ -23,3 +26,6 @@ cli.add_command(clone)
 cli.add_command(build)
 cli.add_command(generate)
 cli.add_command(remove)
+cli.add_command(info)
+cli.add_command(langs)
+cli.add_command(lang_list)
